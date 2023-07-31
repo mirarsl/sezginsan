@@ -148,7 +148,9 @@ class PageController extends Controller
     }
 
     function sitemap(){
-        $content = view('sitemap.index');
+        $Products = Product::where('status',1)->get();
+
+        $content = view('sitemap.index',compact('Products'));
         return response($content)->header('Content-Type', 'application/xml');
     }
 }
