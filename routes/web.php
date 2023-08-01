@@ -22,5 +22,6 @@ Route::post('form/iletisim', [App\Http\Controllers\PageController::class, 'store
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('route.home');
 Route::get('{slug}', [App\Http\Controllers\PageController::class, 'index'])->name('route.page');
 Route::get('urun/{slug}', [App\Http\Controllers\PageController::class, 'product'])->name('route.product');
+Route::get('politika/{slug}', [App\Http\Controllers\PageController::class, 'policy'])->name('route.policy');
 
 

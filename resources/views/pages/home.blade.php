@@ -50,13 +50,15 @@
                         </div>
                         <p>{{ $Corporate->about_short }}</p>
                         <div class="btn-wrapper">
-                            <a href="{{ route('route.page','hakkimizda') }}" class="theme-btn-3 btn btn-effect-4">Hakkımızda</a>
+                            <a href="{{ route('route.page', 'hakkimizda') }}"
+                                class="theme-btn-3 btn btn-effect-4">Hakkımızda</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+@empty(!$Products)
     <div class="ltn__service-area ltn__primary-bg before-bg-1 pt-115 pb-70">
         <div class="container">
             <div class="row">
@@ -97,6 +99,8 @@
             </div>
         </div>
     </div>
+@endempty
+@empty(!$Clients)
     <div class="ltn__brand-logo-area ltn__brand-logo-1 pt-80 pb-110 plr--9">
         <div class="container">
             <div class="row">
@@ -111,7 +115,7 @@
                 @forelse ($Clients as $client)
                     <div class="col-lg-12">
                         <div class="ltn__brand-logo-item">
-                            <img src="{{asset($client->image)}}" alt="Sezgin San Referansları">
+                            <img src="{{ asset($client->image) }}" alt="Sezgin San Referansları">
                         </div>
                     </div>
                 @empty
@@ -119,18 +123,21 @@
             </div>
         </div>
     </div>
-    <div class="ltn__call-to-action-area call-to-action-2 pt-20 pb-20" data-bs-bg="img/1.jpg--">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="call-to-action-inner call-to-action-inner-2 text-center">
-                        <h4>Bilgi almak için hemen iletişime geç</h4>
-                        <div class="btn-wrapper">
-                            <a class="btn btn-effect-4 btn-white" href="tel:90 532 337 66 08"><i class="icon-call"></i>İletişime Geç</a>
-                        </div>
+@endempty
+
+<div class="ltn__call-to-action-area call-to-action-2 pt-20 pb-20" data-bs-bg="img/1.jpg--">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="call-to-action-inner call-to-action-inner-2 text-center">
+                    <h4>Bilgi almak için hemen iletişime geç</h4>
+                    <div class="btn-wrapper">
+                        <a class="btn btn-effect-4 btn-white" href="tel:90 532 337 66 08"><i
+                                class="icon-call"></i>İletişime Geç</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 @endsection

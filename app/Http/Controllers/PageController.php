@@ -14,6 +14,7 @@ use App\History;
 use App\Product;
 use App\Client;
 use App\Message;
+use App\Policy;
 
 use Artesaos\SEOTools\Facades\SEOMeta;
 use Artesaos\SEOTools\Facades\OpenGraph;
@@ -102,6 +103,13 @@ class PageController extends Controller
 
 
         return view('pages.product')->with('Product',$Product)->with('Others',$Others);
+    }
+
+    function policy($slug) {
+        $Policies = Policy::where('status',1)->where('slug',$slug)->get()->first();
+        if (empty($Policies)) abort('404');
+
+        return view('pages.policy',compact('Policies'));
     }
     
     function store(Request $request){
