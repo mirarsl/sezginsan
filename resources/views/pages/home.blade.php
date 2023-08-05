@@ -100,7 +100,7 @@
         </div>
     </div>
 @endempty
-@empty(!$Clients)
+{{-- @empty(!$Clients)
     <div class="ltn__brand-logo-area ltn__brand-logo-1 pt-80 pb-110 plr--9">
         <div class="container">
             <div class="row">
@@ -123,7 +123,7 @@
             </div>
         </div>
     </div>
-@endempty
+@endempty --}}
 
 <div class="ltn__call-to-action-area call-to-action-2 pt-20 pb-20" data-bs-bg="img/1.jpg--">
     <div class="container">

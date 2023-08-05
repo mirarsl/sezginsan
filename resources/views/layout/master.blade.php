@@ -98,7 +98,7 @@
                                             <li><a href="{{ route('route.home') }}">Anasayfa</a></li>
                                             <li><a href="{{ route('route.page', 'hakkimizda') }}">Hakkımızda</a></li>
                                             <li><a href="{{ route('route.page', 'urunler') }}">Ürünler</a></li>
-                                            <li><a href="{{ route('route.page', 'referanslar') }}">Referanslar</a></li>
+                                            {{-- <li><a href="{{ route('route.page', 'referanslar') }}">Referanslar</a></li> --}}
                                             <li class="special-link"><a
                                                     href="{{ route('route.page', 'iletisim') }}">İletişime Geç</a></li>
                                         </ul>
@@ -144,7 +144,7 @@
                         <li><a href="{{ route('route.home') }}">Anasayfa</a></li>
                         <li><a href="{{ route('route.page', 'hakkimizda') }}">Hakkımızda</a></li>
                         <li><a href="{{ route('route.page', 'urunler') }}">Ürünler</a></li>
-                        <li><a href="{{ route('route.page', 'referanslar') }}">Referanslar</a></li>
+                        {{-- <li><a href="{{ route('route.page', 'referanslar') }}">Referanslar</a></li> --}}
                         <li><a href="{{ route('route.page', 'iletisim') }}">İletişim</a></li>
                     </ul>
                 </div>
@@ -250,7 +250,7 @@
                                         <li><a href="{{ route('route.home') }}">Anasayfa</a></li>
                                         <li><a href="{{ route('route.page', 'hakkimizda') }}">Hakkımızda</a></li>
                                         <li><a href="{{ route('route.page', 'urunler') }}">Ürünler</a></li>
-                                        <li><a href="{{ route('route.page', 'referanslar') }}">Referanslar</a></li>
+                                        {{-- <li><a href="{{ route('route.page', 'referanslar') }}">Referanslar</a></li> --}}
                                         <li><a href="{{ route('route.page', 'iletisim') }}">İletişim</a></li>
                                     </ul>
                                 </div>
