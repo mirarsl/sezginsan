@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \Mcamara\LaravelLocalization\Traits\LoadsTranslatedCachedRoutes;
 
 use App\Slider;
 use App\Corporate;

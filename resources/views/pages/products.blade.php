@@ -26,9 +26,9 @@
                                         <div class="col-xl-3 col-lg-4 col-sm-6 col-6">
                                             <div class="ltn__product-item ltn__product-item-3 text-center">
                                                 <div class="product-img">
-                                                    <a href="{{ route('route.product', $product->slug) }}"><img
+                                                    <a href="{{ route('route.product', $product->getTranslatedAttribute('slug')) }}"><img
                                                             src="{{ asset($product->image) }}"
-                                                            alt="{{ $product->title }}"></a>
+                                                            alt="{{ $product->getTranslatedAttribute('title') }}"></a>
                                                 </div>
                                                 <div class="product-info">
                                                     <div class="product-ratting">
@@ -41,7 +41,7 @@
                                                         </ul>
                                                     </div>
                                                     <h6 class="product-title"><a
-                                                            href="{{ route('route.product', ['slug' => $product->slug]) }}">{{ $product->title }}</a>
+                                                            href="{{ route('route.product', ['slug' => $product->getTranslatedAttribute('slug')]) }}">{{ $product->getTranslatedAttribute('title') }}</a>
                                                     </h6>
                                                 </div>
                                             </div>
@@ -58,10 +58,10 @@
                                     <div class="col-lg-12">
                                         <div class="ltn__product-item ltn__product-item-3">
                                             <div class="product-img">
-                                                <a href="{{ route('route.product', $product->slug) }}"><img src="{{asset($product->image)}}" alt="{{$product->title}}"></a>
+                                                <a href="{{ route('route.product', $product->getTranslatedAttribute('slug')) }}"><img src="{{asset($product->image)}}" alt="{{$product->getTranslatedAttribute('title')}}"></a>
                                             </div>
                                             <div class="product-info">
-                                                <h2 class="product-title"><a href="{{ route('route.product', $product->slug) }}">{{ $product->title }}</a></h2>
+                                                <h2 class="product-title"><a href="{{ route('route.product', $product->getTranslatedAttribute('slug')) }}">{{ $product->getTranslatedAttribute('title') }}</a></h2>
                                                 <div class="product-ratting">
                                                     <ul>
                                                         <li><i class="fas fa-star"></i></li>
@@ -72,7 +72,7 @@
                                                     </ul>
                                                 </div>
                                                 <div class="product-brief">
-                                                    <p>{!!substr($product->text,0,150)!!}</p>
+                                                    <p>{!!substr($product->getTranslatedAttribute('text'),0,150)!!}</p>
                                                 </div>
                                             </div>
                                         </div>

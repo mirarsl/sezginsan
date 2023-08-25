@@ -8,7 +8,7 @@
                         <div class="ltn__contact-address-icon">
                             <img src="{{ asset('assets/img/icons/10.png') }}" alt="Icon Image">
                         </div>
-                        <h3>E Posta</h3>
+                        <h3>{{__('contact1')}}</h3>
                         <p>
                             {{ $Contact->email }}
                             @if (!empty($Contact->email2))
@@ -23,7 +23,7 @@
                         <div class="ltn__contact-address-icon">
                             <img src="{{ asset('assets/img/icons/11.png') }}" alt="Icon Image">
                         </div>
-                        <h3>Telefon</h3>
+                        <h3>{{__('contact2')}}</h3>
                         <p>
                             {{ $Contact->phone }}
                             @if (!empty($Contact->phone2))
@@ -38,11 +38,11 @@
                         <div class="ltn__contact-address-icon">
                             <img src="{{ asset('assets/img/icons/12.png') }}" alt="Icon Image">
                         </div>
-                        <h3>Adres</h3>
-                        <p>{{ $Contact->address }}</p>
-                        @if (!empty($Contact->address2))
+                        <h3>{{__('contact3')}}</h3>
+                        <p>{{ $Contact->getTranslatedAttribute('address') }}</p>
+                        @if (!empty($Contact->getTranslatedAttribute('address2')))
                             <br>
-                            <p>{{ $Contact->address2 }}</p>
+                            <p>{{ $Contact->getTranslatedAttribute('address2') }}</p>
                         @endif
                     </div>
                 </div>
@@ -54,7 +54,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="ltn__form-box contact-form-box box-shadow white-bg">
-                        <h4 class="title-2">İletişime Geç</h4>
+                        <h4 class="title-2">{{__('contact4')}}</h4>
                         @if (session('status'))
                             <div class="alert mt-3 alert-{{ session('status') }} alert-dismissible fade show"
                                 role="alert">
@@ -73,17 +73,17 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="input-item input-item-name ltn__custom-icon">
-                                        <input type="text" name="name" placeholder="İsim & Soyisim" required>
+                                        <input type="text" name="name" placeholder="{{__('form1')}}" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="input-item input-item-email ltn__custom-icon">
-                                        <input type="email" name="email" placeholder="E-Posta" required>
+                                        <input type="email" name="email" placeholder="{{__('form2')}}" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="input-item input-item-phone ltn__custom-icon">
-                                        <input type="text" name="phone" placeholder="Telefon" required>
+                                        <input type="text" name="phone" placeholder="{{__('form3')}}" required>
                                     </div>
                                 </div>
                             </div>
@@ -91,10 +91,9 @@
                                 <textarea name="message" placeholder="Mesajınız" required></textarea>
                             </div>
                             <p><input id="agree" type="checkbox" required> <label for="agree"
-                                    class="input-info-save mb-0"> Bilgilerimin kayıt altında tutulmasını kabul
-                                    ediyorum.</label></p>
+                                    class="input-info-save mb-0"> {{__('form4')}}</label></p>
                             <div class="btn-wrapper mt-0">
-                                <button class="btn theme-btn-1 btn-effect-1 text-uppercase" type="submit">Gönder</button>
+                                <button class="btn theme-btn-1 btn-effect-1 text-uppercase" type="submit">{{__('form5')}}</button>
                             </div>
                             <p class="form-messege mb-0 mt-20"></p>
                         </form>

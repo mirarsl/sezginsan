@@ -8,12 +8,12 @@
                     <div class="ltn__breadcrumb-inner ltn__breadcrumb-inner-2 justify-content-between">
                         <div class="section-title-area ltn__section-title-2">
                             <h6 class="section-subtitle ltn__secondary-color">Sezgin San</h6>
-                            <h1 class="section-title white-color">{{$Page->title}}</h1>
+                            <h1 class="section-title white-color">{{$Page->getTranslatedAttribute('title')}}</h1>
                         </div>
                         <div class="ltn__breadcrumb-list">
                             <ul>
-                                <li><a href="{{route('route.home')}}">Anasayfa</a></li>
-                                <li>{{$Page->title}}</li>
+                                <li><a href="{{route('route.home')}}">{{__('menu1')}}</a></li>
+                                <li>{{$Page->getTranslatedAttribute('title')}}</li>
                             </ul>
                         </div>
                     </div>

@@ -1,0 +1,41 @@
+{
+    "prefix":"en",
+    "menu1":"Homepage",
+    "menu2":"About Us",
+    "menu3":"Products",
+    "menu4":"Contact",
+    "link1":"",
+    "link2":"about-us",
+    "link3":"products",
+    "link4":"contact",
+
+
+    "header1":"Contact Us",
+    "footer1":"Products",
+    "footer2":"All rights reserved. @ Sezginsan",
+
+    "home1":"About us",
+    "home2":"Our Products",
+    "home3":"Contact now for information",
+    "home4":"Contact",
+
+    "about1":"About us",
+    "about2":"For information <a href='tel:%'>contact now</a>.",
+    "about3":"Our Mission",
+    "about4":"Our Vision",
+    "about5":"Our Values",
+    "about6":"History",
+
+    "product1":"Contact",
+    "product2":"Other Products",
+
+    "contact1":"E-Mail",
+    "contact2":"Phone",
+    "contact3":"Address",
+    "contact4":"Contact",
+    "form1":"First & Last Name",
+    "form2":"E-Mail",
+    "form3":"Phone",
+    "form4":"I agree to have my information recorded.",
+    "form5":"Submit"
+}

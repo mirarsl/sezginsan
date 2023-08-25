@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="tr">
+<html class="no-js" lang="{{__('prefix')}}">
 
 <head>
     <base href="{{ Request::root() }}">
@@ -28,7 +28,7 @@
                                 <ul>
                                     <li><a href="mailto:{{ $Contact->email }}"><i class="icon-mail"></i>
                                             {{ $Contact->email }}</a></li>
-                                    <li><i class="icon-placeholder"></i>{{ $Contact->address }}</li>
+                                    <li><i class="icon-placeholder"></i>{{ $Contact->getTranslatedAttribute('address') }}</li>
                                 </ul>
                             </div>
                         </div>
@@ -84,7 +84,7 @@
                                         <i class="icon-call"></i>
                                     </div>
                                     <div class="get-support-info">
-                                        <h6>İletişime Geç</h6>
+                                        <h6>{{__('header1')}}</h6>
                                         <h4><a href="tel:{{ $Contact->phone }}">{{ $Contact->phone }}</a></h4>
                                     </div>
                                 </div>
@@ -95,12 +95,12 @@
                                 <nav>
                                     <div class="ltn__main-menu">
                                         <ul>
-                                            <li><a href="{{ route('route.home') }}">Anasayfa</a></li>
-                                            <li><a href="{{ route('route.page', 'hakkimizda') }}">Hakkımızda</a></li>
-                                            <li><a href="{{ route('route.page', 'urunler') }}">Ürünler</a></li>
+                                            <li><a href="{{ route('route.home') }}">{{__('menu1')}}</a></li>
+                                            <li><a href="{{ route('route.page', __('link2')) }}">{{__('menu2')}}</a></li>
+                                            <li><a href="{{ route('route.page', __('link3')) }}">{{__('menu3')}}</a></li>
                                             {{-- <li><a href="{{ route('route.page', 'referanslar') }}">Referanslar</a></li> --}}
                                             <li class="special-link"><a
-                                                    href="{{ route('route.page', 'iletisim') }}">İletişime Geç</a></li>
+                                                    href="{{ route('route.page', __('link4')) }}">{{__('menu4')}}</a></li>
                                         </ul>
                                     </div>
                                 </nav>
@@ -133,19 +133,19 @@
                     </div>
                     <button class="ltn__utilize-close">×</button>
                 </div>
-                <div class="ltn__utilize-menu-search-form">
+                {{-- <div class="ltn__utilize-menu-search-form">
                     <form action="#">
                         <input type="text" placeholder="Search...">
                         <button><i class="fas fa-search"></i></button>
                     </form>
-                </div>
+                </div> --}}
                 <div class="ltn__utilize-menu">
                     <ul>
-                        <li><a href="{{ route('route.home') }}">Anasayfa</a></li>
-                        <li><a href="{{ route('route.page', 'hakkimizda') }}">Hakkımızda</a></li>
-                        <li><a href="{{ route('route.page', 'urunler') }}">Ürünler</a></li>
+                        <li><a href="{{ route('route.home') }}">{{__('menu1')}}</a></li>
+                        <li><a href="{{ route('route.page', __('link2')) }}">{{__('menu2')}}</a></li>
+                        <li><a href="{{ route('route.page', __('link3')) }}">{{__('menu3')}}</a></li>
                         {{-- <li><a href="{{ route('route.page', 'referanslar') }}">Referanslar</a></li> --}}
-                        <li><a href="{{ route('route.page', 'iletisim') }}">İletişim</a></li>
+                        <li><a href="{{ route('route.page', __('link4')) }}">{{__('menu4')}}</a></li>
                     </ul>
                 </div>
                 <div class="ltn__social-media-2">
@@ -191,7 +191,7 @@
                                                 <i class="icon-placeholder"></i>
                                             </div>
                                             <div class="footer-address-info">
-                                                <p>{{ $Contact->address }}</p>
+                                                <p>{{ $Contact->getTranslatedAttribute('address') }}</p>
                                             </div>
                                         </li>
                                         <li>
@@ -247,23 +247,23 @@
                                 <h4 class="footer-title">Hızlı erişim</h4>
                                 <div class="footer-menu">
                                     <ul>
-                                        <li><a href="{{ route('route.home') }}">Anasayfa</a></li>
-                                        <li><a href="{{ route('route.page', 'hakkimizda') }}">Hakkımızda</a></li>
-                                        <li><a href="{{ route('route.page', 'urunler') }}">Ürünler</a></li>
+                                        <li><a href="{{ route('route.home') }}">{{__('menu1')}}</a></li>
+                                        <li><a href="{{ route('route.page', __('link2')) }}">{{__('menu2')}}</a></li>
+                                        <li><a href="{{ route('route.page', __('link3')) }}">{{__('menu3')}}</a></li>
                                         {{-- <li><a href="{{ route('route.page', 'referanslar') }}">Referanslar</a></li> --}}
-                                        <li><a href="{{ route('route.page', 'iletisim') }}">İletişim</a></li>
+                                        <li><a href="{{ route('route.page', __('link4')) }}">{{__('menu4')}}</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xl-3 col-md-6 col-sm-6 col-12">
                             <div class="footer-widget footer-menu-widget clearfix">
-                                <h4 class="footer-title">Ürünler</h4>
+                                <h4 class="footer-title">{{__('footer1')}}</h4>
                                 <div class="footer-menu">
                                     <ul>
                                         @foreach ($FooterProducts as $product)
                                             <li><a
-                                                    href="{{ route('route.product', $product->slug) }}">{{ $product->title }}</a>
+                                                    href="{{ route('route.product', $product->getTranslatedAttribute('slug')) }}">{{ $product->getTranslatedAttribute('title') }}</a>
                                             </li>
                                         @endforeach
                                     </ul>
@@ -278,14 +278,14 @@
                     <div class="row">
                         <div class="col-md-6 col-12">
                             <div class="ltn__copyright-design clearfix">
-                                <p>Tüm hakları saklıdır @ Company <span class="current-year"></span></p>
+                                <p>{{__('footer2')}} <span class="current-year"></span></p>
                             </div>
                         </div>
                         <div class="col-md-6 col-12 align-self-center">
                             <div class="ltn__copyright-menu text-end">
                                 <ul>
                                     @foreach ($Policy as $policy)
-                                        <li><a href="{{route('route.policy',$policy->slug)}}">{{$policy->title}}</a></li>
+                                        <li><a href="{{route('route.policy',$policy->getTranslatedAttribute('slug') )}}">{{$policy->getTranslatedAttribute('title')}}</a></li>
                                     @endforeach
                                 </ul>
                             </div>

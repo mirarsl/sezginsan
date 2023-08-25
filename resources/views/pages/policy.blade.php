@@ -8,12 +8,12 @@
                     <div class="ltn__breadcrumb-inner ltn__breadcrumb-inner-2 justify-content-between">
                         <div class="section-title-area ltn__section-title-2">
                             <h6 class="section-subtitle ltn__secondary-color">Sezgin San</h6>
-                            <h1 class="section-subtitle white-color">{{ $Policies->title }}</h1>
+                            <h1 class="section-subtitle white-color">{{ $Policies->getTranslatedAttribute('title') }}</h1>
                         </div>
                         <div class="ltn__breadcrumb-list">
                             <ul>
-                                <li><a href="{{ route('route.home') }}">Anasayfa</a></li>
-                                <li>{{ $Policies->title }}</li>
+                                <li><a href="{{ route('route.home') }}">{{__('menu1')}}</a></li>
+                                <li>{{ $Policies->getTranslatedAttribute('title') }}</li>
                             </ul>
                         </div>
                     </div>
@@ -25,7 +25,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    {!! $Policies->text !!}
+                    {!! $Policies->getTranslatedAttribute('text') !!}
                 </div>
             </div>
         </div>

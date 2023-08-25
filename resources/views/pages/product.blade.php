@@ -8,13 +8,13 @@
                     <div class="ltn__breadcrumb-inner ltn__breadcrumb-inner-2 justify-content-between">
                         <div class="section-title-area ltn__section-title-2">
                             <h6 class="section-subtitle ltn__secondary-color">Sezgin San</h6>
-                            <h1 class="section-title white-color">{{ $Product->title }}</h1>
+                            <h1 class="section-title white-color">{{ $Product->getTranslatedAttribute('title') }}</h1>
                         </div>
                         <div class="ltn__breadcrumb-list">
                             <ul>
-                                <li><a href="{{ route('route.home') }}">Anasayfa</a></li>
-                                <li><a href="{{ route('route.page', 'urunler') }}">Ürünler</a></li>
-                                <li>{{ $Product->title }}</li>
+                                <li><a href="{{ route('route.home') }}">{{__('menu1')}}</a></li>
+                                <li><a href="{{ route('route.page', __('link3')) }}">{{__('menu3')}}</a></li>
+                                <li>{{ $Product->getTranslatedAttribute('title') }}</li>
                             </ul>
                         </div>
                     </div>
@@ -31,7 +31,7 @@
                             <div class="ltn__shop-details-large-img">
                                 <div class="single-large-img">
                                     <a href="{{ asset($Product->image) }}" data-rel="lightcase:myCollection">
-                                        <img src="{{ asset($Product->image) }}" alt="{{ $Product->title }}">
+                                        <img src="{{ asset($Product->image) }}" alt="{{ $Product->getTranslatedAttribute('title') }}">
                                     </a>
                                 </div>
                                 @if (!empty($Product->gallery))
@@ -41,7 +41,7 @@
                                     @foreach ($gallery as $item)
                                         <div class="single-large-img">
                                             <a href="{{ asset($item) }}" data-rel="lightcase:myCollection">
-                                                <img src="{{ asset($item) }}" alt="{{ $Product->title }}">
+                                                <img src="{{ asset($item) }}" alt="{{ $Product->getTranslatedAttribute('title') }}">
                                             </a>
                                         </div>
                                     @endforeach
@@ -55,7 +55,7 @@
                                     @foreach ($gallery as $item)
                                         <div class="single-large-img">
                                             <a href="javascript:void(0);">
-                                                <img src="{{ asset($item) }}" alt="{{ $Product->title }}">
+                                                <img src="{{ asset($item) }}" alt="{{ $Product->getTranslatedAttribute('title') }}">
                                             </a>
                                         </div>
                                     @endforeach
@@ -64,8 +64,8 @@
 
                         </div>
                         <div class="content mt-50">
-                            <h2 class="section-title">{{ $Product->title }} <span>.</span></h2>
-                            {!! $Product->text !!}
+                            <h2 class="section-title">{{ $Product->getTranslatedAttribute('title') }} <span>.</span></h2>
+                            {!! $Product->getTranslatedAttribute('text') !!}
                         </div>
 
 
@@ -77,9 +77,9 @@
                             <img height="120" width="100%" src="{{ asset('assets/img/logo.svg') }}" alt="Banner Image">
                         </div>
                         <div class="widget ltn__search-widget ltn__newsletter-widget">
-                            <h6 class="ltn__widget-sub-title">Sezgin san</h6>
-                            <a href="tel:">
-                                <h4 class="ltn__widget-title">İletişime Geç</h4>
+                            <h6 class="ltn__widget-sub-title">Sezgin San</h6>
+                            <a href="tel:{{$Contact->phone}}">
+                                <h4 class="ltn__widget-title">{{__('product1')}}</h4>
                             </a>
                             <div class="ltn__newsletter-bg-icon">
                                 <i class="fas fa-phone"></i>
@@ -87,10 +87,10 @@
                         </div>
                         @empty(!$Others)
                             <div class="widget-2 ltn__menu-widget ltn__menu-widget-2 text-uppercase">
-                                <h4 class="section-subtitle">Diğer Ürünler</h4>
+                                <h4 class="section-subtitle">{{__('product2')}}</h4>
                                 <ul>
                                     @foreach ($Others as $pro)
-                                        <li><a href="{{ route('route.product', $pro->slug) }}">{{ $pro->title }} <span><i
+                                        <li><a href="{{ route('route.product', $pro->getTranslatedAttribute('slug')) }}">{{ $pro->getTranslatedAttribute('title') }} <span><i
                                                         class="fas fa-arrow-right"></i></span></a>
                                         </li>
                                     @endforeach

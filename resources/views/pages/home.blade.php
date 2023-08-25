@@ -9,12 +9,12 @@
                     <div class="ltn__slide-item-inner">
                         <div class="slide-item-info bg-overlay-white-90 text-center">
                             <div class="slide-item-info-inner  ltn__slide-animation">
-                                <h1 class="slide-title animated text-uppercase">{{ $slider->title }}</h1>
-                                <h4 class="slide-sub-title text-uppercase animated">{{ $slider->text }}</h4>
-                                @if (!empty($slider->button) && !empty($slider->link))
+                                <h1 class="slide-title animated text-uppercase">{{ $slider->getTranslatedAttribute('title') }}</h1>
+                                <h4 class="slide-sub-title text-uppercase animated">{{ $slider->getTranslatedAttribute('text') }}</h4>
+                                @if (!empty($slider->getTranslatedAttribute('button')) && !empty($slider->getTranslatedAttribute('link')))
                                     <div class="btn-wrapper animated">
-                                        <a href="{{ $slider->link }}"
-                                            class="theme-btn-1 btn btn-effect-1 text-uppercase">{{ $slider->button }}</a>
+                                        <a href="{{ $slider->getTranslatedAttribute('link') }}"
+                                            class="theme-btn-1 btn btn-effect-1 text-uppercase">{{ $slider->getTranslatedAttribute('button') }}</a>
                                     </div>
                                 @endif
                             </div>
@@ -35,7 +35,7 @@
                             <div class="about-us-img-info">
                                 <div class="about-us-img-info-inner">
                                     <h1><span class="counter">{{ $Counter->counter1 }}</span><span>+</span></h1>
-                                    <h6><span>{{ $Counter->title1 }}</span></h6>
+                                    <h6><span>{{ $Counter->getTranslatedAttribute('title1') }}</span></h6>
                                     <span class="dots-bottom"></span>
                                 </div>
                             </div>
@@ -45,13 +45,13 @@
                 <div class="col-lg-6 align-self-center">
                     <div class="about-us-info-wrap">
                         <div class="section-title-area ltn__section-title-2">
-                            <h6 class="section-subtitle ltn__secondary-color">Hakkımızda</h6>
-                            <h3 class="section-title">{{ $Corporate->title }}<span>.</span></h3>
+                            <h6 class="section-subtitle ltn__secondary-color">{{__('home1')}}</h6>
+                            <h3 class="section-title">{{ $Corporate->getTranslatedAttribute('title') }}<span>.</span></h3>
                         </div>
-                        <p>{{ $Corporate->about_short }}</p>
+                        <p>{{ $Corporate->getTranslatedAttribute('about_short') }}</p>
                         <div class="btn-wrapper">
-                            <a href="{{ route('route.page', 'hakkimizda') }}"
-                                class="theme-btn-3 btn btn-effect-4">Hakkımızda</a>
+                            <a href="{{ route('route.page', __('link2')) }}"
+                                class="theme-btn-3 btn btn-effect-4">{{__('menu2')}}</a>
                         </div>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
                 <div class="col-lg-12">
                     <div class="section-title-area ltn__section-title-2 text-center">
                         <h6 class="section-subtitle ltn__secondary-color">Sezgin San.</h6>
-                        <h3 class="section-title white-color">Ürünlerimiz<span>.</span></h3>
+                        <h3 class="section-title white-color">{{__('home2')}}<span>.</span></h3>
                     </div>
                 </div>
             </div>
@@ -74,8 +74,8 @@
                     <div class="col-lg-12">
                         <div class="ltn__product-item ltn__product-item-3 text-center">
                             <div class="product-img">
-                                <a href="{{ route('route.product', ['slug' => $product->slug]) }}"><img
-                                        src="{{ asset($product->image) }}" alt="{{ $product->title }}"></a>
+                                <a href="{{ route('route.product', ['slug' => $product->getTranslatedAttribute('slug') ]) }}"><img
+                                        src="{{ asset($product->image) }}" alt="{{ $product->getTranslatedAttribute('title') }}"></a>
                             </div>
                             <div class="product-info">
                                 <div class="product-ratting">
@@ -88,7 +88,7 @@
                                     </ul>
                                 </div>
                                 <h6 class="product-title"><a
-                                        href="{{ route('route.product', ['slug' => $product->slug]) }}">{{ $product->title }}</a>
+                                        href="{{ route('route.product', ['slug' => $product->getTranslatedAttribute('slug')]) }}">{{ $product->getTranslatedAttribute('title') }}</a>
                                 </h6>
 
                             </div>
@@ -130,10 +130,10 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="call-to-action-inner call-to-action-inner-2 text-center">
-                    <h4>Bilgi almak için hemen iletişime geç</h4>
+                    <h4>{{__('home3')}}</h4>
                     <div class="btn-wrapper">
-                        <a class="btn btn-effect-4 btn-white" href="tel:90 532 337 66 08"><i
-                                class="icon-call"></i>İletişime Geç</a>
+                        <a class="btn btn-effect-4 btn-white" href="tel:{{$Contact->phone}}"><i
+                                class="icon-call"></i>{{__('home4')}}</a>
                     </div>
                 </div>
             </div>

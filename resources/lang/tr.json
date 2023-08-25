@@ -1,0 +1,41 @@
+{
+    "prefix":"tr",
+    "menu1":"Anasayfa",
+    "menu2":"Hakkımızda",
+    "menu3":"Ürünler",
+    "menu4":"İletişime Geç",
+    "link1":"",
+    "link2":"hakkimizda",
+    "link3":"urunler",
+    "link4":"iletisim",
+
+
+    "header1":"İletişime Geç",
+    "footer1":"Ürünler",
+    "footer2":"Tüm hakları saklıdır @ Sezginsan",
+
+    "home1":"Hakkımızda",
+    "home2":"Ürünlerimiz",
+    "home3":"Bilgi Almak için hemen iletişime geç",
+    "home4":"İletişime Geç",
+    
+    "about1":"Hakkımızda",
+    "about2":"Bilgi almak için hemen <a href='tel:%'>iletişime geç</a>.",
+    "about3":"Misyonumuz",
+    "about4":"Vizyonumuuz",
+    "about5":"Değerlerimiz",
+    "about6":"Tarihçe",
+
+    "product1":"İletişime Geç",
+    "product2":"Diğer Ürünler",
+
+    "contact1":"E-Posta",
+    "contact2":"Telefon",
+    "contact3":"Adres",
+    "contact4":"İletişime Geç",
+    "form1":"İsim & Soyisim",
+    "form2":"E-Posta",
+    "form3":"Telefon",
+    "form4":"Bilgilerimin kayıt altında tutulmasını kabul ediyorum.",
+    "form5":"Gönder"
+}
