@@ -99,7 +99,7 @@ class PageController extends Controller
         JsonLd::addImage(url(asset($Product->image)));
         
 
-        $Others = Product::where('slug','!=',$slug)->limit(4,0)->get();
+        $Others = Product::whereTranslation('slug','!=',$slug)->limit(4,0)->get();
 
 
         return view('pages.product')->with('Product',$Product)->with('Others',$Others);
