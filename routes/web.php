@@ -16,7 +16,7 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
+Route::group(['prefix' => \Mcamara\LaravelLocalization\Facades\LaravelLocalization::setLocale()], function () {
 
     Route::get('/clear-cache', function() {
         Artisan::call('cache:clear');
@@ -42,12 +42,12 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
     });
     
     Route::get('sitemap.xml', [App\Http\Controllers\PageController::class, 'sitemap'])->name('route.sitemap');
-    Route::post(LaravelLocalization::transRoute('routes.store'), [App\Http\Controllers\PageController::class, 'store'])->name('route.contact');
+    Route::post(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute('routes.store'), [App\Http\Controllers\PageController::class, 'store'])->name('route.contact');
 
-    Route::get(LaravelLocalization::transRoute('routes.home'), [App\Http\Controllers\HomeController::class, 'index'])->name('route.home');
-    Route::get(LaravelLocalization::transRoute('routes.page'), [App\Http\Controllers\PageController::class, 'index'])->name('route.page');
-    Route::get(LaravelLocalization::transRoute('routes.product'), [App\Http\Controllers\PageController::class, 'product'])->name('route.product');
-    Route::get(LaravelLocalization::transRoute('routes.policy'), [App\Http\Controllers\PageController::class, 'policy'])->name('route.policy');
+    Route::get(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute('routes.home'), [App\Http\Controllers\HomeController::class, 'index'])->name('route.home');
+    Route::get(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute('routes.page'), [App\Http\Controllers\PageController::class, 'index'])->name('route.page');
+    Route::get(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute('routes.product'), [App\Http\Controllers\PageController::class, 'product'])->name('route.product');
+    Route::get(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute('routes.policy'), [App\Http\Controllers\PageController::class, 'policy'])->name('route.policy');
 
 
     
