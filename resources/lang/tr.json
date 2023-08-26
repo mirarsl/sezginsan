@@ -12,7 +12,8 @@
 
     "header1":"İletişime Geç",
     "footer1":"Ürünler",
-    "footer2":"Tüm hakları saklıdır @ Sezginsan",
+    "footer2":"Hızlı Erişim",
+    "footer3":"Tüm hakları saklıdır @ Sezginsan",
 
     "home1":"Hakkımızda",
     "home2":"Ürünlerimiz",
@@ -36,6 +37,7 @@
     "form1":"İsim & Soyisim",
     "form2":"E-Posta",
     "form3":"Telefon",
-    "form4":"Bilgilerimin kayıt altında tutulmasını kabul ediyorum.",
-    "form5":"Gönder"
+    "form4":"Mesajınız",
+    "form5":"Bilgilerimin kayıt altında tutulmasını kabul ediyorum.",
+    "form6":"Gönder"
 }

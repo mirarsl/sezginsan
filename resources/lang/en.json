@@ -12,7 +12,8 @@
 
     "header1":"Contact Us",
     "footer1":"Products",
-    "footer2":"All rights reserved. @ Sezginsan",
+    "footer2":"Quick Links",
+    "footer3":"All rights reserved. @ Sezginsan",
 
     "home1":"About us",
     "home2":"Our Products",
@@ -36,6 +37,7 @@
     "form1":"First & Last Name",
     "form2":"E-Mail",
     "form3":"Phone",
-    "form4":"I agree to have my information recorded.",
-    "form5":"Submit"
+    "form4":"Your Message",
+    "form5":"I agree to have my information recorded.",
+    "form6":"Submit"
 }

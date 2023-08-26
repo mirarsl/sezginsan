@@ -88,12 +88,12 @@
                                 </div>
                             </div>
                             <div class="input-item input-item-textarea ltn__custom-icon">
-                                <textarea name="message" placeholder="Mesajınız" required></textarea>
+                                <textarea name="message" placeholder="{{__('form4')}}" required></textarea>
                             </div>
                             <p><input id="agree" type="checkbox" required> <label for="agree"
-                                    class="input-info-save mb-0"> {{__('form4')}}</label></p>
+                                    class="input-info-save mb-0"> {{__('form5')}}</label></p>
                             <div class="btn-wrapper mt-0">
-                                <button class="btn theme-btn-1 btn-effect-1 text-uppercase" type="submit">{{__('form5')}}</button>
+                                <button class="btn theme-btn-1 btn-effect-1 text-uppercase" type="submit">{{__('form6')}}</button>
                             </div>
                             <p class="form-messege mb-0 mt-20"></p>
                         </form>

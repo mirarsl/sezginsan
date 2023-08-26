@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="{{__('prefix')}}">
+<html class="no-js" lang="{{ __('prefix') }}">
 
 <head>
     <base href="{{ Request::root() }}">
@@ -28,7 +28,9 @@
                                 <ul>
                                     <li><a href="mailto:{{ $Contact->email }}"><i class="icon-mail"></i>
                                             {{ $Contact->email }}</a></li>
-                                    <li><i class="icon-placeholder"></i>{{ $Contact->getTranslatedAttribute('address') }}</li>
+                                    <li><i
+                                            class="icon-placeholder"></i>{{ $Contact->getTranslatedAttribute('address') }}
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -36,6 +38,36 @@
                             <div class="top-bar-right text-end">
                                 <div class="ltn__top-bar-menu">
                                     <ul>
+                                        @hasSection ('lang')
+                                            @yield('lang')
+                                        @else
+                                            <li>
+                                                <div class="ltn__drop-menu ltn__currency-menu ltn__language-menu">
+                                                    <ul>
+                                                        <li><a href="javascript:void(0)" class="dropdown-toggle">
+                                                            <img width="25" src="{{ asset('/assets/img/' . LaravelLocalization::getCurrentLocaleName() . '.png') }}"
+                                                            alt="{{LaravelLocalization::getCurrentLocaleNative()}}">
+                                                                <span
+                                                                    class="active-currency">{{ LaravelLocalization::getCurrentLocaleNative() }}</span></a>
+                                                            <ul>
+                                                                @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                                                    <li>
+                                                                        <a rel="alternate"
+                                                                            hreflang="{{ $localeCode }}"
+                                                                            href="{{ LaravelLocalization::getURLFromRouteNameTranslated($localeCode, 'routes.home') }}">
+                                                                            <img width="25"
+                                                                                src="{{ asset('/assets/img/' . $properties['name'] . '.png') }}"
+                                                                                alt="{{ $localeCode }}">
+                                                                            {{ $properties['native'] }}
+                                                                        </a>
+                                                                    </li>
+                                                                @endforeach
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        @endif
                                         <li>
                                             <div class="ltn__social-media">
                                                 <ul>
@@ -84,7 +116,7 @@
                                         <i class="icon-call"></i>
                                     </div>
                                     <div class="get-support-info">
-                                        <h6>{{__('header1')}}</h6>
+                                        <h6>{{ __('header1') }}</h6>
                                         <h4><a href="tel:{{ $Contact->phone }}">{{ $Contact->phone }}</a></h4>
                                     </div>
                                 </div>
@@ -95,12 +127,17 @@
                                 <nav>
                                     <div class="ltn__main-menu">
                                         <ul>
-                                            <li><a href="{{ route('route.home') }}">{{__('menu1')}}</a></li>
-                                            <li><a href="{{ route('route.page', __('link2')) }}">{{__('menu2')}}</a></li>
-                                            <li><a href="{{ route('route.page', __('link3')) }}">{{__('menu3')}}</a></li>
+                                            <li><a href="{{ route('route.home') }}">{{ __('menu1') }}</a></li>
+                                            <li><a
+                                                    href="{{ route('route.page', __('link2')) }}">{{ __('menu2') }}</a>
+                                            </li>
+                                            <li><a
+                                                    href="{{ route('route.page', __('link3')) }}">{{ __('menu3') }}</a>
+                                            </li>
                                             {{-- <li><a href="{{ route('route.page', 'referanslar') }}">Referanslar</a></li> --}}
                                             <li class="special-link"><a
-                                                    href="{{ route('route.page', __('link4')) }}">{{__('menu4')}}</a></li>
+                                                    href="{{ route('route.page', __('link4')) }}">{{ __('menu4') }}</a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </nav>
@@ -141,11 +178,11 @@
                 </div> --}}
                 <div class="ltn__utilize-menu">
                     <ul>
-                        <li><a href="{{ route('route.home') }}">{{__('menu1')}}</a></li>
-                        <li><a href="{{ route('route.page', __('link2')) }}">{{__('menu2')}}</a></li>
-                        <li><a href="{{ route('route.page', __('link3')) }}">{{__('menu3')}}</a></li>
+                        <li><a href="{{ route('route.home') }}">{{ __('menu1') }}</a></li>
+                        <li><a href="{{ route('route.page', __('link2')) }}">{{ __('menu2') }}</a></li>
+                        <li><a href="{{ route('route.page', __('link3')) }}">{{ __('menu3') }}</a></li>
                         {{-- <li><a href="{{ route('route.page', 'referanslar') }}">Referanslar</a></li> --}}
-                        <li><a href="{{ route('route.page', __('link4')) }}">{{__('menu4')}}</a></li>
+                        <li><a href="{{ route('route.page', __('link4')) }}">{{ __('menu4') }}</a></li>
                     </ul>
                 </div>
                 <div class="ltn__social-media-2">
@@ -244,21 +281,24 @@
                         </div>
                         <div class="col-xl-3 col-md-6 col-sm-6 col-12">
                             <div class="footer-widget footer-menu-widget clearfix">
-                                <h4 class="footer-title">Hızlı erişim</h4>
+                                <h4 class="footer-title">{{__('footer2')}}</h4>
                                 <div class="footer-menu">
                                     <ul>
-                                        <li><a href="{{ route('route.home') }}">{{__('menu1')}}</a></li>
-                                        <li><a href="{{ route('route.page', __('link2')) }}">{{__('menu2')}}</a></li>
-                                        <li><a href="{{ route('route.page', __('link3')) }}">{{__('menu3')}}</a></li>
+                                        <li><a href="{{ route('route.home') }}">{{ __('menu1') }}</a></li>
+                                        <li><a href="{{ route('route.page', __('link2')) }}">{{ __('menu2') }}</a>
+                                        </li>
+                                        <li><a href="{{ route('route.page', __('link3')) }}">{{ __('menu3') }}</a>
+                                        </li>
                                         {{-- <li><a href="{{ route('route.page', 'referanslar') }}">Referanslar</a></li> --}}
-                                        <li><a href="{{ route('route.page', __('link4')) }}">{{__('menu4')}}</a></li>
+                                        <li><a href="{{ route('route.page', __('link4')) }}">{{ __('menu4') }}</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xl-3 col-md-6 col-sm-6 col-12">
                             <div class="footer-widget footer-menu-widget clearfix">
-                                <h4 class="footer-title">{{__('footer1')}}</h4>
+                                <h4 class="footer-title">{{ __('footer1') }}</h4>
                                 <div class="footer-menu">
                                     <ul>
                                         @foreach ($FooterProducts as $product)
@@ -278,14 +318,16 @@
                     <div class="row">
                         <div class="col-md-6 col-12">
                             <div class="ltn__copyright-design clearfix">
-                                <p>{{__('footer2')}} <span class="current-year"></span></p>
+                                <p>{{ __('footer3') }} <span class="current-year"></span></p>
                             </div>
                         </div>
                         <div class="col-md-6 col-12 align-self-center">
                             <div class="ltn__copyright-menu text-end">
                                 <ul>
                                     @foreach ($Policy as $policy)
-                                        <li><a href="{{route('route.policy',$policy->getTranslatedAttribute('slug') )}}">{{$policy->getTranslatedAttribute('title')}}</a></li>
+                                        <li><a
+                                                href="{{ route('route.policy', $policy->getTranslatedAttribute('slug')) }}">{{ $policy->getTranslatedAttribute('title') }}</a>
+                                        </li>
                                     @endforeach
                                 </ul>
                             </div>

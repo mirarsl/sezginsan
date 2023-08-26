@@ -31,3 +31,29 @@
         </div>
     </div>
 @endsection
+@section('lang')
+    <li>
+        <div class="ltn__drop-menu ltn__currency-menu ltn__language-menu">
+            <ul>
+                <li><a href="javascript:void(0)" class="dropdown-toggle">
+                        <img width="25"
+                            src="{{ asset('/assets/img/' . LaravelLocalization::getCurrentLocaleName() . '.png') }}"
+                            alt="{{ LaravelLocalization::getCurrentLocaleNative() }}">
+                        <span class="active-currency">{{ LaravelLocalization::getCurrentLocaleNative() }}</span></a>
+                    <ul>
+                        @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                            <li>
+                                <a rel="alternate" hreflang="{{ $localeCode }}"
+                                    href="{{ LaravelLocalization::getURLFromRouteNameTranslated($localeCode, 'routes.policy', ['slug' => $Policies->getTranslatedAttribute('slug',$localeCode)]) }}">
+                                    <img width="25" src="{{ asset('/assets/img/' . $properties['name'] . '.png') }}"
+                                        alt="{{ $localeCode }}">
+                                    {{ $properties['native'] }}
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </li>
+@endsection
