@@ -27,7 +27,7 @@ use Spatie\Sitemap\SitemapGenerator;
 class PageController extends Controller
 {
     function index($slug){
-        $Page = Page::where('slug',$slug)->get()->first();
+        $Page = Page::whereTranslation('slug',$slug)->get()->first();
         if (empty($Page)) abort('404');
 
         SEOMeta::setTitle($Page->meta_title);
@@ -67,7 +67,7 @@ class PageController extends Controller
 
 
     function product($slug) {
-        $Product = Product::where('slug',$slug)->get()->first();
+        $Product = Product::whereTranslation('slug',$slug)->get()->first();
         if (empty($Product)) abort('404');
 
         SEOMeta::setTitle(!empty($Product->meta_title) ? $Product->meta_title : $Product->title);
@@ -106,7 +106,7 @@ class PageController extends Controller
     }
 
     function policy($slug) {
-        $Policies = Policy::where('status',1)->where('slug',$slug)->get()->first();
+        $Policies = Policy::where('status',1)->whereTranslation('slug',$slug)->get()->first();
         if (empty($Policies)) abort('404');
 
         return view('pages.policy',compact('Policies'));
