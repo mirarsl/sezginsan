@@ -54,7 +54,7 @@ class PageController extends Controller
         $Clients = Client::all();
 
         $PageData = [];
-        switch ($slug) {
+        switch ($Page->getTranslatedAttribute('slug','tr')) {
             case 'hakkimizda': $PageData['yield']="pages.about"; $PageData['Corporate'] = $Corporate;$PageData['Counter']=$Counter; $PageData['History']=$History; break;
             case 'urunler': $PageData['yield']="pages.products"; $PageData['Products'] = $Products; break;
             case 'referanslar': $PageData['yield']="pages.clients"; $PageData['Clients'] = $Clients; break;
